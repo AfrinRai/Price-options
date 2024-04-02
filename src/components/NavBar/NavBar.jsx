@@ -16,7 +16,7 @@ const NavBar = () => {
       ];
       
     return (
-        <nav className=" pl-5 bg-gray-500">
+        <nav className=" pl-5 bg-gray-500 mt-7">
             <div onClick={() => setOpen(!open)} className="text-2xl md:hidden">
                 {
                     open === true ? <RxCross2></RxCross2> : <RiMenu2Line></RiMenu2Line>
