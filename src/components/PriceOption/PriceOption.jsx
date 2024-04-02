@@ -6,15 +6,20 @@ const PriceOption = ({option}) => {
     const {name, price, features} = option;
 
     return (   
-        <div className='bg-teal-100 p-4 rounded-3xl m-4 text-center'>
+        <div className='bg-teal-100 p-6 rounded-3xl m-4 text-center flex flex-col'>
             <h2>
                 <span className="text-5xl font-bold">{price}</span>
                 <span className='text-xl'>/mon</span>
             </h2>
             <h4 className='text-3xl mb-4'>{name}</h4>
-            {
-                features.map((feature, idx) => <Feature feature={feature} key={idx}></Feature>)
-            }
+            <div className='flex-grow'>
+                {
+                    features.map((feature, idx) => <Feature feature={feature} key={idx}></Feature>)
+                }
+            </div>
+            <button
+             className='mt-12 w-full rounded-lg bg-green-400 p-4 font-bold text-xl hover:bg-green-600'>
+                Buy Now</button>
         </div>
     );
 };
