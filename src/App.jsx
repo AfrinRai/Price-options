@@ -1,4 +1,5 @@
 import './App.css'
+import ComposedChart from './components/ComposedChart/ComposedChart'
 import LineChart from './components/LIneChart/LineChart'
 // import DaisyNav from './components/DaisyNav/DaisyNav'
 import NavBar from './components/NavBar/NavBar'
@@ -13,6 +14,7 @@ function App() {
       {/* <DaisyNav></DaisyNav> */}
       <PriceOptions></PriceOptions>
       <LineChart></LineChart>
+      <ComposedChart></ComposedChart>
     </>
   )
 }
