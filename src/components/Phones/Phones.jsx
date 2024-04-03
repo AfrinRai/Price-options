@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 
 const Phones = () => {
@@ -28,7 +29,14 @@ const Phones = () => {
 
     return (
         <div>
-            <h3 className="text-3xl font-bold">Total phones: {phone.length}</h3>
+            <h3 className="text-3xl font-bold mb-10">Total phones: {phone.length}</h3>
+            <BarChart width={1200} height={400} data={phone}>
+                <Bar dataKey="price" fill="#8884d8" />
+                <XAxis dataKey={'name'}></XAxis>
+                <YAxis></YAxis>
+                <Tooltip></Tooltip>
+                <Legend></Legend>
+            </BarChart>
         </div>
     );
 };
