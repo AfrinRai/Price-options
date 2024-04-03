@@ -1,10 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend } from 'recharts';
+import { Audio } from 'react-loader-spinner'
 
 
 const Phones = () => {
     const [phone, setPhone] = useState([])
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         // fetch('https://openapi.programming-hero.com/api/phones?search=iphone')
@@ -23,12 +25,25 @@ const Phones = () => {
             })
             console.log(fakeData)
             setPhone(fakeData);
+            setLoading(false)
         })
 
     }, [])
 
     return (
         <div>
+           { loading && <div>
+                <Audio
+                    height="80"
+                    width="80"
+                    radius="9"
+                    color="green"
+                    ariaLabel="loading"
+                    wrapperStyle
+                    wrapperClass
+                />
+            </div>
+           }
             <h3 className="text-3xl font-bold mb-10">Total phones: {phone.length}</h3>
             <BarChart width={1200} height={400} data={phone}>
                 <Bar dataKey="price" fill="#8884d8" />
