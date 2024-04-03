@@ -3,6 +3,7 @@ import ComposedChart from './components/ComposedChart/ComposedChart'
 import LineChart from './components/LIneChart/LineChart'
 // import DaisyNav from './components/DaisyNav/DaisyNav'
 import NavBar from './components/NavBar/NavBar'
+import Phones from './components/Phones/Phones'
 import PriceOptions from './components/PriceOptions/PriceOptions'
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <PriceOptions></PriceOptions>
       <LineChart></LineChart>
       <ComposedChart></ComposedChart>
+      <Phones></Phones>
     </>
   )
 }
